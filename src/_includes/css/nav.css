@@ -1,0 +1,257 @@
+.site-head__inner {
+  justify-content: space-between;
+  padding-top: var(--space-s-m);
+  padding-bottom: var(--space-s-m);
+  /* padding-block: var(--space-s-m); */
+}
+
+.site-head__brand {
+  display: inline-flex;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  /* padding-block: 2px; */
+}
+
+:where(.navigation) ul {
+  --cluster-gap: var(--space-2xs);
+}
+
+:where(.navigation) li {
+  margin: 0.1rem;
+  position: relative;
+}
+
+:where(.navigation) a {
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--space-3xs) var(--space-2xs);
+  transition: transform 100ms ease-in-out;
+}
+
+:where(.navigation) a:hover {
+  /* color: var(--header-text); */
+  text-decoration: underline;
+}
+
+.burger-menu__trigger {
+  display: none;
+}
+
+.burger-menu__bar,
+.burger-menu__bar::before,
+.burger-menu__bar::after {
+  display: block;
+  width: 24px;
+  /* inline-size: 24px; */
+  height: 3px;
+  /* block-size: 3px; */
+  background: var(--header-text);
+  border: var(--border-size-1) solid var(--header-text);
+  position: absolute;
+  border-radius: 1px;
+  left: 50%;
+  /* inset-inline-start: 50%; */
+  margin-left: -12px;
+  /* margin-inline-start: -12px; */
+  transition: transform 350ms ease-in-out;
+}
+
+.burger-menu__bar {
+  top: 50%;
+  /* inset-block-start: 50%; */
+  transform: translateY(-50%);
+}
+
+.burger-menu__bar::before,
+.burger-menu__bar::after {
+  content: "";
+}
+
+.burger-menu__bar::before {
+  top: -8px;
+  /* inset-block-start: -8px; */
+}
+
+.burger-menu__bar::after {
+  bottom: -8px;
+  /* inset-block-end: -8px; */
+}
+
+.burger-menu[enabled="true"] .burger-menu__trigger {
+  display: block;
+  width: 2rem;
+  /* inline-size: 2rem; */
+  height: 2rem; /* Nice big tap target */
+  /* block-size: 2rem; */
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-1);
+}
+
+.burger-menu[enabled="true"] .burger-menu__trigger[aria-expanded="true"] {
+  position: fixed;
+  top: calc(0.69 * var(--gutter));
+  /* inset-block-start: calc(0.69 * var(--gutter)); */
+  right: var(--gutter);
+  /* inset-inline-end: var(--gutter); */
+  z-index: 3;
+}
+
+.burger-menu[enabled="true"] .burger-menu__panel {
+  position: fixed;
+  top: 0;
+  /* inset-block-start: 0; */
+  left: 0;
+  /* inset-inline-start: 0; */
+  padding: var(--gutter);
+  width: 100%;
+  /* inline-size: 100%; */
+  height: 100vh;
+  /* block-size: 100vh; */
+  visibility: hidden;
+  opacity: 0;
+  background: var(--header-bg);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  z-index: 2;
+}
+
+.burger-menu[enabled="true"] .navigation ul {
+  display: block;
+  margin-top: var(--space-l);
+  /* margin-block-start: var(--space-l); */
+}
+
+.burger-menu[enabled="true"] .navigation a {
+  padding: var(--space-2xs) 0;
+  font-size: var(--step-1);
+}
+
+.burger-menu[enabled="true"] .navigation a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* inset: 0; */
+}
+
+.burger-menu[enabled="true"] .navigation li:last-child a {
+  padding: var(--space-3xs) var(--space-2xs);
+  margin-top: var(--space-2xs);
+  /* margin-block-start: var(--space-2xs); */
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__panel {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.burger-menu[enabled="true"][status="closed"] .burger-menu__panel > * {
+  opacity: 0;
+  transform: translateY(5rem);
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 350ms cubic-bezier(0.17, 0.67, 0, 0.87) 450ms,
+    opacity 350ms ease 500ms;
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__bar::before {
+  top: 0;
+  /* inset-block-start: 0; */
+  transform: rotate(45deg);
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__bar::after {
+  top: 0;
+  /* inset-block-start: 0; */
+  transform: rotate(-45deg);
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__bar {
+  background: transparent;
+  border-color: transparent;
+  transform: rotate(180deg);
+}
+
+/* styles the current page in the menu */
+[aria-current="page"]::before,
+[data-state="active"]::before {
+  display: inline-block;
+  margin-right: var(--space-4xs);
+  /* margin-inline-end: var(--space-4xs); */
+  content: "▸";
+  content: "▸"/ "";
+  alt: "";
+}
+
+[aria-current="page"],
+[data-state="active"] {
+  position: relative;
+  /* text-indent: calc(-1ch + var(--space-4xs)); */
+  text-indent: -6px;
+}
+
+/* Styles the contact us button which is the last child in the nav */
+:where([aria-label="primary"]) :last-child > a {
+  background-color: var(--accent-color);
+  color: var(--header-bg);
+  border-color: transparent;
+
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border-size-1) solid var(--accent-color);
+  border-radius: var(--radius-1);
+  text-decoration-line: none;
+  text-transform: uppercase;
+}
+
+:where([aria-label="primary"]) :last-child > a:where(:hover, :focus) {
+  color: var(--header-text);
+  background-color: transparent;
+  text-decoration-line: none;
+  border: var(--border-size-1) solid;
+}
+
+/* :where([aria-label="primary"]) :last-child > a:active {
+  transform: scale(0.90);
+} */
+
+ul :last-child a:where([aria-current="page"], [data-state="active"]) {
+  color: var(--header-text);
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.burger-menu[enabled="true"] .navigation li:last-child a:where([aria-current="page"], [data-state="active"]) {
+  padding: var(--space-2xs) 0;
+  margin-top: 0;
+  /* margin-block-start: 0; */
+  border-width: 0;
+}
+
+/* To prevent layout shift on smaller viewports caused due to the burger menu */
+@media (max-width: 770px) {
+  .with-js .navigation {
+    position: absolute;
+    top: var(--space-s-m);
+    left: 0;
+    opacity: 0;
+    }
+    
+    .with-js .burger-menu[enabled=true][status=open] .burger-menu__panel .navigation {
+      position: unset;
+      top: unset;
+      left: unset;
+      opacity: unset;
+    }
+}

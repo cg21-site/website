@@ -1,0 +1,34 @@
+{% set customStyle %}
+style="
+padding-top: var(--space-xs);
+padding-bottom: var(--space-xs);
+list-style: disc;
+list-style-position: inside;
+"
+{% endset %}
+
+<ul class="export product-category-list stack" role="list">
+  {% for item in collections.exports.sort() | reverse %}
+    <li class="product-category"
+      {%- if not item.data.sub -%}
+      {{ customStyle | safe }}
+      {% endif %}
+    >
+      {%- if item.data.sub -%}
+        <details-utils close-esc force-close="(max-width: 703px)">
+          <details {{ 'open' if expandedProductList else '' }}>
+            <summary class="product-category__title">{{ item.data.title }}</summary>
+            <ul class="product-list grid" role="list">
+              {% for item in item.data.sub %}
+                <li class="product-item">{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </details>
+        </details-utils>
+      {%- else -%}
+        {{ item.data.title }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+

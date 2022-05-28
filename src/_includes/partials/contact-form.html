@@ -1,0 +1,43 @@
+<form class="stack contact-form" name="Contact" method="POST" data-netlify="true" action="/thank-you" netlify-honeypot="bot-field">
+  <div>
+    <p class="form-label">
+      <label for="name">Name</label>
+      <span class="validity step--1"></span>
+    </p>
+    <input type="text" name="name" id="name" autocomplete="name" spellcheck="false" placeholder="Your name" title="Please enter your name" required>
+  </div>
+  <div>
+    <p class="form-label">
+      <label for="org">Organization</label>
+      <span class="step--1 tertiary">optional</span>
+    </p>
+    <input type="text" name="org" id="org" autocomplete="organization" spellcheck="false" placeholder="Your organization's name" title="Please enter your organization's name">
+  </div>
+  <div>
+    <p class="form-label">
+      <label for="email">Email</label>
+      <span class="validity step--1"></span>
+    </p>
+    <input type="email" name="email" id="email" autocomplete="email" placeholder="Your email address" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
+  </div>
+  <div>
+    <p class="form-label">
+      <label for="tel">Contact Number</label>
+    </p>
+    <input type="tel" name="tel" id="tel" autocomplete="tel" placeholder="Your contact number" title="Please enter your contact number" required>
+  </div>
+  <div>
+    <p class="form-label">
+      <label for="message">Message</label>
+      <span class="step--1 tertiary">optional</span>
+    </p>
+    <textarea name="message" id="message" placeholder="Write your message here" rows="6"></textarea>
+  </div>
+  <div hidden>
+    <label>
+      Don’t fill this out if you're human: 
+      <input name="bot-field" />
+    </label>
+  </div>
+  <button class="btn step-0" type="submit">Submit</button>
+</form>

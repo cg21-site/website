@@ -1,0 +1,11 @@
+.site-head {
+  --header-bg: var(--surface-1);
+  --header-text: var(--primary);
+
+  background: var(--header-bg);
+  color: var(--header-text);
+}
+
+.site-head * {
+  color: inherit;
+}

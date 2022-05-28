@@ -1,0 +1,43 @@
+.offices {
+  --flow-space: var(--space-l-xl);
+}
+
+.offices .timings {
+  --flow-space: var(--space-m-s); 
+}
+
+.offices .timings div {
+  --flow-space: var(--space-s);
+}
+
+.offices ul {
+  --min: 320px;
+  --grid-gap: var(--space-xl);
+  --flow-space: var(--space-xl);
+  background-color: var(--surface-1);
+}
+
+.offices li {
+  border-top: var(--border-size-1) solid var(--accent-bg);
+  padding-top: var(--space-xl);
+}
+
+.offices h2 {
+  font-size: var(--step-4);
+}
+
+.offices :where(address, a) {
+  --flow-space: var(--space-s);
+}
+
+.offices a {
+  --flow-space: var(--space-l);
+}
+
+@media (max-width: 46em) {
+  .offices li:first-child {
+    border: unset;
+    padding-top: unset;
+    /* padding-block-start: unset; */
+  }
+}

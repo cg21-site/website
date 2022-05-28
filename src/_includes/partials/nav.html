@@ -1,0 +1,20 @@
+{% set navPages = collections.all | eleventyNavigation %}
+
+<div class="site-head__inner wrapper cluster">
+  <a href="/" aria-label="CG21 Home" class="site-head__brand" tabindex="-1">
+    {% include "partials/logo.svg" %}
+  </a>
+  <burger-menu max-width="700">
+    <nav class="navigation step-0" aria-label="primary">
+      <ul role="list" class="cluster">
+        {% for entry in navPages %}
+        <li>
+            <a href="{{ entry.url }}" {{ helpers.getLinkActiveState(entry.url, page.url) | safe }} aria-label="{{ entry.title }}">
+              {{ entry.title }}
+            </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </burger-menu>
+</div>

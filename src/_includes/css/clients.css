@@ -1,0 +1,81 @@
+.client-logos-container {
+  border: var(--border-size-1) solid var(--accent-separator); 
+  border-radius: var(--radius-2);
+  background-color: var(--surface-2);
+}
+
+.view-all-clients {
+  background: none;
+  border: none;
+  border-bottom-left-radius: var(--radius-2);
+  border-bottom-right-radius: var(--radius-2);
+  color: var(--accent-color);
+  padding: unset;
+
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xs);
+  min-width: 100%;
+
+  padding: var(--space-2xs) var(--space-xs);
+  border-top: var(--border-size-1) solid var(--accent-separator);
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.view-all-clients::after {
+  content: " ↓";
+  content: " ↓"/"";
+  alt: "";
+}
+
+.view-all-clients:where(:hover, :focus) {
+  color: var(--accent-color);
+  background-color: var(--accent-separator);
+}
+
+
+.view-all-clients[data-state="hidden"] {
+  display: none;
+}
+
+/* limits logos to 12 */
+.logo-list[data-state="hidden"] > :nth-child(n+13) {
+  display: none;
+}
+
+.logo-list[data-state="visible"] > :nth-child(n+13) {
+  display: unset;
+}
+
+.logo-list {
+  --min: clamp(8.6rem, 25vw, 18rem);
+  --grid-gap: var(--space-s);
+  --grid-gap: var(--border-size-1) 0;
+  border-top-left-radius: var(--radius-2);
+  border-top-right-radius: var(--radius-2);
+  background: var(--accent-separator);
+}
+
+.logo-list li {
+  background: var(--surface-1);
+}
+
+.logo-list div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-l) var(--space-m);
+}
+
+.logo-list img {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+
+  border-radius: var(--radius-1);
+}
+
+

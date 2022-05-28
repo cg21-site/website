@@ -1,0 +1,95 @@
+.product-category-list {
+  --stack-gap: 0;
+  --flow-space: var(--space-m);
+}
+
+.product-category-list > li + li {
+  border-top: var(--border-size-1) solid var(--accent-separator);
+  /* border-block-start: var(--border-size-1) solid var(--accent-separator); */
+}
+
+.product-category-list details[open] {
+  margin-bottom: var(--space-xs);
+  /* margin-block-end: var(--space-xs); */
+}
+
+.product-category__title {
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
+  /* padding-block: var(--space-xs); */
+  color: var(--accent-color);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.product-category__title, .product-item__title {
+  border-radius: var(--radius-1);
+}
+
+.product-category-list summary:hover {
+  --summary-bg: hsl(198deg 53% 95%);
+  border-radius: var(--radius-1);
+  background-color: var(--summary-bg);
+  color: var(--accent-color);
+}
+
+.product-list {
+  --min: 32ch;
+  --grid-gap: 0 var(--space-l-xl);
+  padding-left: 1em;
+  /* padding-inline-start: 1em; */
+  text-transform: capitalize;
+}
+
+/* .product-category-list li li summary + * {
+  padding-top: var(--space-xs);
+} */
+
+.product-item__title+* {
+  padding-top: var(--space-xs);
+}
+
+/* .product-list li li {
+  --flow-space: var(--space-xs);
+} */
+
+.product-specification {
+  --flow-space: var(--space-xs);
+}
+
+/* When :has() is widely supported uncomment the code below and remove custom style from product list and export list */
+/* @supports (selector(:has(works))) {
+  .product-category:not(:has(details)) {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+    border-top: var(--border-size-1) solid var(--accent-separator);
+  }
+
+  .product-category-list li:not(:has(details))::before  {
+    content: "\2022  ";
+  }
+} */
+
+.product-list summary, .export .product-item {
+  padding-top: var(--space-2xs);
+  padding-bottom: var(--space-2xs);
+  /* padding-block: var(--space-2xs); */
+}
+
+/* .product-item details[open] .product-item__title {
+  border-bottom: var(--border-size-1) solid var(--accent-separator);
+} */
+
+.product-item ul {
+  list-style: disc;
+  padding-left: 2em;
+}
+
+.product-list summary::marker {
+  color: hsl(198deg 98% 32% / 40%);
+}
+
+.export .product-list {
+  list-style: disc; 
+  list-style-position: inside;
+}

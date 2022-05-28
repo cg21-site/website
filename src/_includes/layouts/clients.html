@@ -1,0 +1,43 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  <div class="clients">
+    <article class="wrapper flow">
+      {%- include "partials/clients-header.html" -%}
+      <div class="client-logos-container overflow:hidden">
+        {%- include "partials/clients.html" -%}
+        <button class="view-all-clients step-0">
+          View All Clients
+        </button>
+      </div>
+    </article>
+  </div>
+  <div class="testimonial">
+    <article class="wrapper flow">  
+      <h2 class="section-title">{{ siteContent.clients.subHeading }}</h2>
+      <p>{{ siteContent.clients.subHeadingSubtitle | safe }}</p>
+      <ul class="testimonial-container grid" role="list">
+        {%- for testimonial in collections.testimonials -%}
+          {%- include "partials/testimonial-block.html" -%}
+          {%- endfor -%}
+      </ul>
+    </article>
+  </div>
+  {%- include "sections/cta-section.html" -%}
+{%- endblock -%}
+
+{%- block bodyScripts -%}
+  <script>
+    const logoList = document.querySelector('.logo-list');
+    const viewAllButton = document.querySelector('.view-all-clients');
+    
+    logoList.setAttribute('data-state', 'hidden');
+    viewAllButton.addEventListener("click", showMore);
+    
+    function showMore() {
+      logoList.setAttribute('data-state', 'visible');
+      viewAllButton.setAttribute('data-state', 'hidden');
+    };
+  </script>
+  <!-- <script src="/scripts/lite-yt-embed.js" async></script> -->
+{%- endblock -%}

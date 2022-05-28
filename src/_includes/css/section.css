@@ -1,0 +1,20 @@
+:where(main > *:first-child) {
+  padding-top: var(--space-m);
+  /* padding-block-start: var(--space-m); */
+}
+
+.section-title {
+  --cluster-gap: var(--space-s);
+  justify-content: space-between;
+}
+
+.section-title h2 {
+  display: flex;
+  flex-grow: 999;
+  flex-basis: 0;
+}
+
+.section-title + * {
+  --flow-space: var(--space-m-s);
+  --measure: 47ch;
+}

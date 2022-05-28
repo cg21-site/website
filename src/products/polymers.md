@@ -1,0 +1,10 @@
+---
+title: Polymers
+sub:
+  - "SBR, PBR, SSBR, NBR,SKI3, SKI3S & others"
+  - "Kumho (Korea) SBR : All 1500 series, HBR, SSBR-SOL 5130H-SOL 5271H, NBR-35L, KNB 1845"
+  - "LG(Korea) : NBR 2255, 6240, 3345, 2860, 6230, 7150, 6260, SSBR-2550, 3323, 3626, 3824,F1038, F1810, F2150, 2550H, SBR-1500 series and 1723"
+  - "TJPC & ARAK : SBR 1502 / 1507 / 1712 / 1723 / 1705 / 1721 PBR-1220/1202 (COBALT & ND Base)"
+  - "Russia Origin : SBR1502, 1712, 1500, 1705, BK1675N, PBR1220, BBK232, NBR33, 26, SKI-3S, SKI-3"
+tags: rubber
+---

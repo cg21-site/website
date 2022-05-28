@@ -1,0 +1,58 @@
+[data-location="home"] .site-head {
+  --header-bg: var(--inverted-bg);
+  --header-text: var(--inverted-text);
+}
+
+[data-location="home"] .burger-menu__bar,
+[data-location="home"] .burger-menu__bar::before,
+[data-location="home"] .burger-menu__bar::after {
+  background: var(--header-text);
+  border-color: var(--header-text);
+}
+
+/* [data-location="home"] main > * {
+  padding: 0;
+} */
+
+[data-location="home"] main>:nth-child(1) {
+  /* padding-top: var(--space-l-xl); */
+  padding-top: var(--space-s-m);
+  padding-bottom: 0;
+  /* padding-block-start: var(--space-s-m); */
+  /* padding-block-end: 0; */
+}
+
+[data-location="home"] main>:nth-child(2) {
+  margin-top: -360px;
+  /* margin-block-start: -342px; */
+  padding-top: var(--space-l-xl);
+  /* padding-block-start: var(--space-l-xl); */
+  background: var(--surface-1);
+
+  /* border-top-left-radius: var(--radius-2);
+  border-top-right-radius: var(--radius-2); */
+}
+
+/* remove padding from the last two regions */
+[data-location="home"] main>:nth-child(n+3) {
+  padding-top: 0;
+}
+
+@media (min-width: 500px) {
+  [data-location="home"] .section-title h2::after {
+    content: "";
+    height: 1px;
+    /* block-size: 1px; */
+    flex-grow: 999;
+    background-color: var(--accent-bg);
+  }
+}
+
+[data-location="home"] .client-logos {
+  --min: clamp(8.6rem, 25vw, 13rem);
+  background: unset;
+  /* border-radius: unset;
+  border-inline: unset;
+  border-block-end: unset;
+  border: unset; */
+}

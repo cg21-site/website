@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  <div class="about">
+    <article class="wrapper flow">
+      <header>
+        <h1>{{ title }}</h1>
+      </header>
+      <div class="with-sidebar">
+        <div class="flow">
+          {{ content | safe }}
+        </div>
+        <div class="grid">
+          {% for item in siteContent.about.items %}
+          <div class="about-items flow">
+            <h2>{{ item.heading }}</h2>
+            <p>{{ item.desc | safe }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </article>
+  </div>
+  {%- include "sections/cta-section.html" -%}
+{% endblock %}

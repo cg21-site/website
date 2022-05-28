@@ -1,0 +1,91 @@
+.cta-content {
+  position: relative;
+  padding: var(--space-l);
+  min-width: 100%;
+  border-radius: var(--radius-2);
+  isolation: isolate;
+  
+  background: var(--inverted-bg);
+  color: var(--inverted-text);
+}
+
+.cta-content * {
+  color: inherit;
+}
+
+.cta-content h2 {
+  --measure: 24ch;
+  max-width: var(--measure);
+}
+
+.cta-content p {
+  /* --measure: 48ch; */
+  --measure: 44ch;
+  --flow-space: var(--space-m);
+  filter: brightness(0.9);
+}
+
+.cta-content a {
+  border-color: var(--accent-color);
+  position: relative;
+  text-transform: uppercase;
+}
+
+.cta-content a:where(:hover, :focus) {
+  text-decoration-line: none;
+  background-color: var(--inverted-text);
+  border-color: var(--inverted-text);
+  color: var(--accent-color);
+}
+
+/* https://tympanus.net/Development/ButtonHoverStyles/ */
+
+.cta-content a::before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  z-index: -1;
+  -webkit-clip-path: 
+    polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 80% 70%, 75% 70%, 0 70%);
+  clip-path: 
+    polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 80% 70%, 75% 70%, 0 70%);
+}
+
+.cta-content a:where(:hover, :focus)::before {
+  background: var(--inverted-text);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 86% 100%, 75% 70%, 0 70%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 86% 100%, 75% 70%, 0 70%);
+}
+
+.cta-content img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  /* transform: translate(25%, 50%);
+  height: 200%; */
+  transform: translate(30%, 50%);
+  height: 230%;
+  width: auto;
+  object-fit: contain;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (min-width: 55em) {
+  .cta-content img {
+    transform: translate(30%, 41%);
+  }
+
+  .cta-content p {
+    --measure: 45ch;
+  }
+}
+
+.cta em {
+  background: linear-gradient(90deg,hsl(198deg 100% 62% / 25%) 30%,hsl(198deg 100% 62% / 0%));
+  /* border-radius: var(--radius-1); */
+  padding: 0 var(--space-3xs);
+}

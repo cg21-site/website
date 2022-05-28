@@ -1,0 +1,91 @@
+.post {
+  --flow-space: 1em;
+}
+
+.post article {
+  column-width: 320px;
+  column-rule: var(--border-size-1) solid var(--accent-bg);
+  column-gap: var(--space-l-xl);
+}
+
+.post article header {
+  column-span: all;
+}
+
+.post article > header {
+  margin-bottom: var(--space-l-xl);
+  /* margin-block-end: var(--space-l-xl); */
+}
+
+.post article header + * {
+  margin-top: 0;
+  /* margin-block-start: 0; */
+}
+
+.post header {
+  --stack-gap: var(--space-s);
+}
+
+.post :where(h2, h3) {
+  --measure: 50ch;
+  max-width: var(--measure);
+}
+
+.post h1 {
+  --measure: 45ch;
+  font-size: var(--step-3);
+}
+
+.post h2 {
+  font-size: var(--step-2);
+}
+
+.post h3 {
+  font-size: var(--step-1);
+}
+
+.post img {
+  /* width: 280px; */
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-1);
+}
+
+:where(.post) :where(ul, ol):not([class]) li {
+  max-width: var(--measure);
+}
+
+:where(.post) :where(ul:not([class]), ol:not([class])) {
+  padding: 0;
+  padding-left: var(--space-l);
+  /* padding-inline-start: var(--space-l); */
+  margin: 0;
+}
+
+:where(.post) :where(ul, ol):not([class]) li + li {
+  margin-top: var(--flow-space, 1em);
+}
+
+[aria-label="secondary"] {
+  width: 100%;
+}
+
+
+
+/* drop cap */
+/* @supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
+  .post > p:first-of-type:first-letter {
+  -webkit-initial-letter: 4;
+  initial-letter: 4;
+  padding: var(--space-m);
+  background-color: var(--accent-bg);
+  margin-right: var(--space-m);
+  border: 1px solid var(--separator);
+  border-radius: var(--radius-1);
+  }
+} */
+
+.post nav {
+  --flow-space: var(--space-l-xl);
+}

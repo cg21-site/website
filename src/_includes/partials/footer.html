@@ -1,0 +1,13 @@
+<footer role="contentinfo">
+  <div class="wrapper cluster">
+    <p>© 2022 {{ site.name }}</p>
+    <nav aria-label="Secondary">
+      <ul class="cluster" role="list">
+        {% for page in collections.pages %}
+        <li><a href="{{ page.url }}">{{ page.data.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <p>Site Credit:<a href="mailto:{{ site.developerLink}}">{{ site.developerName}}</a></p>
+  </div>
+</footer>

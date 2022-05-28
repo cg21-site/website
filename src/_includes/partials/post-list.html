@@ -1,0 +1,29 @@
+{% set postslist = pagination.items.reverse() %}
+<ol class="post-list" role="list" aria-label="Post Archive" reversed>
+  {% for post in postslist | reverse %}
+    <li>
+      <article class="cluster">
+        <p class="visually-hidden">Publish date:</p>
+        <time datetime={{ post.date | dump | safe }}>
+          {{ post.date | postDate }}
+        </time>
+        <div class="cluster">
+          <a href="{{ post.url }}" class="postlist-link">
+            {% if post.data.title %}
+              {{ post.data.title }}
+            {% else %}
+              <code>{{ post.url }}</code>
+            {% endif %}
+          </a>
+          <!-- {% set tags = post.data.tags %}
+          <p class="visually-hidden">Tags:</p>
+          <ul class="post-tags cluster" role="list">
+            {% for tag in tags %}
+              <li class="post-tag-item">{{ tag }}</li>
+            {% endfor %}
+          </ul> -->
+        </div>
+      </article>
+    </li>
+  {% endfor %}
+</ol>

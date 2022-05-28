@@ -1,0 +1,14 @@
+<nav aria-label="Archive">
+  <ol class="cluster" role="list">
+    {% if pagination.href.previous %}
+    <li data-direction="backwards">
+      <a href="{{ pagination.href.previous }}"><span aria-hidden="true">←</span> Newer Articles</a>
+    </li>
+    {% endif %}
+    {% if pagination.href.next %}
+    <li data-direction="forwards">
+        <a href="{{ pagination.href.next }}">Older Articles <span aria-hidden="true">→</span></a>
+    </li>
+    {% endif %}
+  </ol>
+</nav>

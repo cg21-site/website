@@ -1,0 +1,99 @@
+.contact-methods {
+  --cluster-gap: var(--space-m);
+  align-items: flex-start;
+}
+
+.contact-methods li {
+  --stack-gap: var(--space-xl);
+  flex-grow: 1;
+
+  padding: var(--space-m);
+  background-color: var(--surface-1);
+  border: var(--border-size-1) solid var(--accent-bg);
+  border-top: var(--step--2) solid var(--accent-bg);
+  border-radius: var(--radius-1);
+}
+
+.contact-methods li > div {
+  --flow-space: var(--space-s);
+}
+
+.contact-methods li h3 {
+  --cluster-gap: var(--space-s);
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.contact-methods li h3 + * {
+  color: var(--tertiary);
+}
+
+.form-method h3 + * {
+  --measure: 30ch;
+} 
+
+.contact-methods svg {
+  width: var(--step-2);
+  /* inline-size: 24px; */
+  height: var(--step-2);
+  /* block-size: 24px; */
+  fill: var(--primary);
+}
+
+svg[class*="bi-telephone"] {
+  stroke: var(--primary);
+  stroke-width: 0.3px;
+}
+
+@media (max-width: 25.5em) {
+  .contact-methods svg {
+    display: none;
+  }
+}
+
+/* .contact-methods p {
+  color: var(--tertiary);
+}
+
+.contact-methods label {
+  color: var(--secondary);
+} */
+
+.contact-form {
+  --measure: 50ch;
+  --stack-gap: var(--space-l);
+  max-width: var(--measure);
+  margin-top: var(--space-l);
+  /* margin-block-start: var(--space-l); */
+}
+
+.contact-form :where(textarea, input)  {
+  border-width: var(--border-size-1);
+  border-color: var(--accent-separator);
+  border-style: solid;
+}
+
+.contact-form div > * + * {
+  margin-top: var(--space-xs);
+}
+
+.form-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+/* validity styles for input  */
+@supports
+ (selector(:has(works))) {
+
+  p:has( + input:focus:invalid) .validity:after { 
+    content: "Invalid";
+    color: hsl(0deg 73% 29%);
+  }
+  
+  p:has( + input:valid) .validity:after { 
+    content: "Valid";
+    color: var(--accent-color);
+  }
+}

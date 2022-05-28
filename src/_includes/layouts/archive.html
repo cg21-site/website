@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  <div class="archive">
+    <article class="wrapper flow">
+      <header class="cluster">
+        <h1>{{ title }}</h1>
+        <span class="page-number">
+          {% if pagination.pageNumber == 0 %}
+            Page {{ pagination.pageNumber + 1 }}
+          {% else %}
+            Page {{ pagination.pageNumber + 1 }}
+          {% endif %}
+        </span>
+      </header>
+      {% include "partials/post-list.html" %}
+      {% include "partials/archive-pagination.html" %}
+    </article>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{%- if testimonial.data.video.id -%}
+  <li class="testimonial-video {{ 'testimonial-featured-video' if testimonial.data.featured }} grid overflow:hidden">
+    {%- include "partials/youtube.html" -%}
+    <div class="testimonial-block stack">
+      <div class="testimonial-content stack">
+        {{ testimonial.templateContent | safe }}
+      </div>
+    </div>
+  </li>  
+{%- else -%}
+  <li class="testimonial-text testimonial-block stack">
+    <svg width="52" height="57" fill="none" xmlns="http://www.w3.org/2000/svg" class="blockquote-svg" aria-hidden="true">
+      <style>
+        .blockquote-svg path {
+          fill: var(--accent-bg);
+        }
+      </style>
+      <path d="M0 21 18 3v36L0 57V21ZM26 21 44 3v36L26 57V21Z" fill="black"/>
+    </svg>
+    <div class="testimonial-content stack">
+      {{ testimonial.templateContent | safe }}
+    </div>
+  </li>
+{%- endif -%}
+

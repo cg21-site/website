@@ -1,0 +1,12 @@
+---
+title: Speciality Chemicals
+sub:
+  - "CPW70 - CHLORINATED PARAFFIN WAX - 70"
+  - "DBDPO - DECA BROMODIPHENYL OXIDE"
+  - "DBDPE - DECA BROMODIPHENYL ETHANE"
+  - "ZINC BORATE 2335"
+  - "IPPP50"
+  - "ANTIMONY TRIOXIDE  99.8%"
+  - "ANTIMONY TRIOXIDE 99.5%"
+tags: rubber
+---

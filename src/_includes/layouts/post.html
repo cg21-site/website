@@ -1,0 +1,31 @@
+---
+title: Post
+ctaContent:
+  heading: Do you have any import requirements?
+  subtitle: Learn more about how we fulfil your sourcing requirements by leveraging our presence at major gateway ports.
+  buttonText: Contact Us
+  buttonUrl: /contact/
+---
+
+{% set opengraphUrl = site.url + '/img/og/post.jpeg' %}
+
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  <div class="post flow">
+    <article class="wrapper flow">
+      <header class="stack">
+        <h1>{{ title }}</h1>
+        <p class="visually-hidden">Publish date:</p>
+        <time datetime={{ date | dump | safe }}>
+          {{ date | postDate }}
+        </time>
+      </header>
+      {{ content | safe }}
+    </article>
+    <nav class="wrapper" aria-label="secondary">
+      <a class="btn step-0" data-variant="secondary" href="/archive/">← Back to the archive</a>
+    </nav>
+  </div>
+  {%- include "sections/cta-section.html" -%}
+{%- endblock -%}

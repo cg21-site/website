@@ -1,0 +1,61 @@
+.services header + ul {
+  --cluster-gap: var(--space-l-xl);
+}
+
+.service-item {
+  background-color: var(--surface-1);
+  border-radius: var(--radius-2);
+  padding: var(--space-m);
+  border: var(--border-size-1) solid var(--accent-bg);
+  border-top: var(--step--2) solid var(--accent-bg);
+  /* border-block-start: var(--space-2xs) solid var(--accent-bg); */
+  counter-increment: item;
+}
+
+.service-item > :first-child {
+  --stack-gap: var(--step-1);
+  position: relative;
+}
+
+@media (min-width: 44em) {
+  .service-item > :first-child::before {
+    /* content: "0" counter(item) "."; */
+    content: "0" counter(item);
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* padding: var(--space-4xs) var(--space-s); */
+    text-transform: uppercase;
+    font-size: var(--step-5);
+    font-weight: 500;
+    color: var(--accent-bg);
+    line-height: 1;
+  }
+}
+
+/* .service-item:last-child {
+  max-width: fit-content;
+} */
+
+.service-item > :first-child {
+  font-weight: 500;
+  text-transform: capitalize;
+  /* color: var(--accent-color); */
+  font-size: var(--step-2);
+  /* padding-bottom: var(--space-xs);
+  border-bottom: var(--border-size-1) solid var(--accent-separator); */
+}
+
+.service-item > ul:first-of-type {
+  --flow-space: var(--space-m-s);
+}
+
+.service-desc {
+  padding-left: 1em;
+  /* padding-inline-start: 1em; */
+  list-style: disc;
+}
+
+.service-desc li {
+  --flow-space: var(--space-3xs);
+}

@@ -1,0 +1,19 @@
+<div class="services">
+  <article class="wrapper flow">
+    <header class="flow">
+      <div class="section-title cluster">
+        <h{{ headingLevel if headingLevel else '2' }} class="cluster">
+          {{ siteContent.services.heading }}
+        </h{{ headingLevel if headingLevel else '2' }}>
+        {%- if not headingLevel -%}
+          <a href="{{ siteContent.services.url }}" class="btn step-0" data-variant="secondary">
+            Know More
+            <span class="visually-hidden"> about {{ siteContent.services.heading | lower }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+      <p>{{ siteContent.services.subtitle | safe }}</p>
+    </header>
+    {%- include "partials/service-items.html" -%}
+  </article>
+</div>

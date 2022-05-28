@@ -1,0 +1,27 @@
+{% set ctaPrefix = siteContent.cta %}
+
+{% if ctaContent %} 
+  {% set ctaPrefix = ctaContent %}
+{% endif %}
+
+<aside class="cta">
+  <article class="wrapper">
+    <div class="cta-content overflow:hidden">
+      <img 
+        class="globe" 
+        src="/img/globe.png" 
+        alt="Globe with markers depicting CG21 offices in India, Singapore and China" 
+        loading="lazy"
+        width="832"
+        height="832"
+      >
+      <div class="flow">
+        <h2>{{ ctaPrefix.heading | safe }}</h2>
+        <p>{{ ctaPrefix.subtitle | addNbsp | safe }}</p>
+        <a class="btn step-0" href={{ ctaPrefix.buttonUrl }}>
+          {{ ctaPrefix.buttonText }}
+        </a>
+      </div>
+    </div>
+  </article>
+</aside>

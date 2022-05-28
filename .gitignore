@@ -1,0 +1,14 @@
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# Eleventy
+public/
+
+# Local Netlify folder
+.netlify
+.cache
+
+#vscode
+.vscode

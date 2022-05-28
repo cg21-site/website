@@ -1,0 +1,81 @@
+{% extends "layouts/base.html" %}
+
+{%- block injectHead -%}
+  <style>
+    header, footer {
+      display: none;
+    }
+
+    body {
+      background: var(--inverted-bg);
+      color: var(--inverted-text);
+    }
+
+    body * {
+      color: inherit;
+    }
+
+    :where(main > *, main>:first-child) {
+      padding: 0;
+    }
+
+    .og {
+      height: 100vh;
+      padding: var(--step-5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .og div {
+      width: 100%;
+    }
+
+    h1 {
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: var(--step-5);
+      letter-spacing: revert;
+    }
+
+    hr {
+      color: inherit;
+      border-color: inherit;
+    }
+
+    p {
+      --measure: 44ch;
+      font-size: var(--step-3);
+    }
+
+    em, strong {
+      font-weight: 400;
+    }
+
+    #svg-logo {
+      display: block;
+      margin-top: auto;
+      height: var(--step-4);
+    }
+
+    #svg-logo path:nth-child(-n+8) {
+    fill: var(--surface-1);
+}
+  </style>
+{%- endblock -%}
+
+{%- block content -%}
+  <div class="og">
+    <div class="flow">
+      <h1>{{ siteContent[pageData.fileSlug].heading | safe }}</h1>
+      {% if siteContent[pageData.fileSlug].subtitle %}
+      <hr>
+      <p>
+        {{ siteContent[pageData.fileSlug].subtitle | safe }}
+      </p>
+      {% endif %}
+    </div>
+    {% include "partials/logo.svg" %}
+  </div>
+{%- endblock -%}

@@ -1,0 +1,33 @@
+---
+title: Page Not Found
+permalink: 404.html
+eleventyExcludeFromCollections: true
+---
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  <div class="page-not-found region">
+    <article class="wrapper flow">
+      <header class="flow">
+        <div class="section-title cluster">
+          <h1>{{ siteContent.pageNotFound.heading }}</h1>
+        </div>
+        <p>{{ siteContent.pageNotFound.subtitle | safe }}</p>
+      </header>
+      <div class="flow">
+        <a href="{{ siteContent.pageNotFound.buttonUrl }}" class="btn step-0">{{ siteContent.pageNotFound.buttonText }}</a>
+        <hr>
+        <div class="flow">
+          <p>Other useful links: </p>
+          <ul style="--flow-space: 1em;">
+            {% for item in collections.pages %}
+              <li>
+                <a href="{{ item.url }}">{{ item.data.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+{%- endblock -%}

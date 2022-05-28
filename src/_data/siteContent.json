@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "heading": "leverage our global network to fulfil your sourcing needs",
+    "subtitle": "Offices in India, Singapore and China"
+  },
+  "about": {
+    "heading": "About Us",
+    "subtitle": "Get to know us, our values, our mission and vision.",
+    "items": [
+      {
+        "heading": "Vision",
+        "desc": "To be an optimum solution provider to suppliers, manufacturers & customers across the globe."
+      },
+      {
+        "heading": "Mission",
+        "desc": "To trade ethically and deliver exceptional results and <em>‘Xtreme Performance’</em> consistently."
+      }
+    ]
+  },
+  "services": {
+    "heading": "Our Services",
+    "subtitle": "One of our key services is to help you source quality products at competitive prices after proper technical evaluation.",
+    "url": "/services/",
+    "items": [
+      {
+        "serviceName": "Raw Materials Sourcing",
+        "desc": [
+          "Vendor & Product Selection",
+          "Free sample on request",
+          "Further assistance available on request"
+        ],
+        "import": true
+      },
+      {
+        "serviceName": "turnkey project set-up in India",
+        "desc": [
+          "Complete turnkey project for setting up a tyre plant",
+          "Technical Consulting",
+          "Project report for tyre plant setup from all segments"
+        ]
+      },
+      {
+        "serviceName": "Export",
+        "export": true
+      }
+    ]
+  },
+  "clients": {
+    "heading": "Our Clients",
+    "subtitle": "We work closely with our clients to fulfil their requirements. Our clients trust us to deliver exceptional services.",
+    "subHeading": "Client Testimonials",
+    "subHeadingSubtitle": "Learn more about what our clients have to say about partnering with&nbsp;us.",
+    "url": "/clients/"
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "subtitle": "Start a WhatsApp chat session, call us, or have us call you—your choice.",
+    "countryCode": 91,
+    "whatsapp": 9372473101,
+    "call": 9819492714,
+    "timing": "Timing: Monday–Friday: 9am–5pm, Saturday:&nbsp;10am–4pm"
+  },
+  "cta": {
+    "heading": "Do you have any import requirements?",
+    "subtitle": "Learn more about how we fulfil your sourcing requirements",
+    "buttonText": "Contact Us",
+    "buttonUrl": "/contact/"
+  },
+  "archive": {
+    "heading": "Archive",
+    "subtitle": "Archive of all the weekly updates."
+  },
+  "weeklyUpdate": {
+    "heading": "Market Weekly Update"
+  },
+  "pageNotFound": {
+    "heading": "Page Not Found",
+    "subtitle": "Looks like you've followed a broken link or entered a URL that doesn't exist on this site.",
+    "buttonText": "← Back to the home page",
+    "buttonUrl": "/"
+  },
+  "offline": {
+    "heading": "Offline",
+    "subtitle": "Something seems to be wrong with the network connection right now.",
+    "buttonText": "contact page",
+    "buttonUrl": "/contact/"
+  }
+}

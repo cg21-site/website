@@ -1,0 +1,30 @@
+.about .with-sidebar {
+  align-items: flex-start;
+  gap: var(--gutter);
+}
+
+.about .with-sidebar > :first-child  {
+  --flow-space: 1em;
+  background-color: var(--surface-3);
+  min-inline-size: 36%;
+}
+
+.about .with-sidebar > :last-child {
+  --min: 25ch;
+  --grid-gap: var(--space-m);
+}
+
+.about-items {
+  --flow-space: 1em;
+  background-color: var(--surface-1);
+  border-radius: var(--radius-1);
+  padding: var(--space-s);
+  border: var(--border-size-1) solid var(--accent-separator);
+  border-top: var(--step--2) solid var(--accent-bg);
+  /* border-block-start: var(--step--2) solid var(--accent-bg); */
+}
+
+:where(.about-items) h2 {
+  font-size: var(--step-2);
+  color: var(--accent-color);
+}

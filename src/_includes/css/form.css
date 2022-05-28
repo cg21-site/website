@@ -1,0 +1,65 @@
+label {
+  font-size: var(--step-1);
+  font-weight: 500;
+}
+
+label,
+label small {
+  display: block;
+}
+
+label small {
+  font-weight: 400;
+  font-style: italic;
+}
+
+input,
+textarea {
+  background-color: inherit;
+}
+
+[type="checkbox"] ~ svg,
+input,
+textarea {
+  border-radius: var(--radius-1);
+}
+
+[type="email"],
+[type="text"],[type="tel"],
+textarea {
+  width: 100%;
+  font-size: inherit;
+  border-width: var(--border-size-1);
+  padding: var(--space-2xs);
+}
+
+[type="checkbox"] ~ svg {
+  stroke: transparent;
+  border-width: var(--border-size-1);
+  vertical-align: middle;
+  padding: 2px;
+  box-sizing: content-box;
+}
+
+[type="checkbox"]:checked ~ svg {
+  stroke: currentColor;
+}
+
+[type="checkbox"]:focus ~ svg {
+  outline: var(--border-size-1) solid var(--outline-color);
+}
+
+input:focus,
+textarea:focus {
+  outline-offset: 0;
+}
+
+[type="submit"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: var(--accent-color);
+  opacity: 0.5;
+}

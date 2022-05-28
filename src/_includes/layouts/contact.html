@@ -1,0 +1,75 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  <div class="contact-us">
+    <article class="wrapper flow">
+      <header class="flow">
+        <div class="section-title">
+          <h1>{{ siteContent.contact.heading }}</h1>
+        </div>
+        <p>
+          {{ siteContent.contact.subtitle | safe }}
+        </p>
+      </header>
+      <h2 class="visually-hidden">Contact Options</h2>
+      <ul class="contact-methods cluster" role="list">
+        <li class="stack">
+          <div class="flow">
+            <h3 class="cluster">
+              WhatsApp chat with Sales
+              {%- include "partials/whatsapp.svg" -%}
+            </h3>
+            <div>
+              <p>Monday–Friday: 9am–5pm (IST)</p>
+              <p>Saturday: 10am–4pm (IST)</p>
+            </div>
+          </div>
+          <a
+            class="btn step-0"
+            data-variant="secondary"
+            href="https://wa.me/{{ siteContent.contact.countryCode }}{{ siteContent.contact.whatsapp }}"
+          >
+            Chat Now on WhatsApp
+          </a>
+        </li>
+        <li class="stack">
+          <div class="flow">
+            <h3 class="cluster">
+              Call Sales
+              {%- include "partials/tel-outbound.svg" -%}
+            </h3>
+            <div>
+              <p>Monday–Friday: 9am–5pm (IST)</p>
+              <p>Saturday: 10am–4pm (IST)</p>
+            </div>
+          </div>
+          <a
+            class="btn step-0"
+            data-variant="secondary"
+            href="tel:+{{ siteContent.contact.countryCode }}{{ siteContent.contact.call }}"
+          >
+            Call +{{ siteContent.contact.countryCode }} {{ siteContent.contact.call }}
+          </a>
+        </li>
+        <li class="form-method stack">
+          <div class="flow">
+            <h3 class="cluster">
+              Request a call
+              {%- include "partials/tel-inbound.svg" -%}
+            </h3>
+            <p>Have our sales specialist contact you by filling the form.</p>
+          </div>
+          <details>
+            <summary 
+              class="form-summary btn step-0" 
+              data-variant="secondary"
+            >
+              Fill The Contact Form</summary>
+            {%- include "partials/contact-form.html" -%}
+          </details>
+        </li>
+      </ul>
+    </article>
+  </div>
+  {%- include "partials/offices.html" -%}
+{%- endblock -%}

@@ -1,0 +1,11 @@
+{% set logoUrl = "./src/img/client-logos/" + logo %}
+{% set logoAlt = company %}
+
+<div class="testimonial-client-info">
+{% image logoUrl, logoAlt, "(min-width: 20em) 50vw, 100vw", "lazy", "" %}
+
+**{{ name }}**
+
+{{ designation }}
+
+</div>

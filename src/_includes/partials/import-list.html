@@ -1,0 +1,55 @@
+{% set customStyle %}
+style="
+list-style: disc;
+list-style-position: inside;
+padding-top: var(--space-2xs);
+padding-bottom: var(--space-2xs);
+"
+{% endset %}
+
+<ul class="product-category-list stack" role="list">
+  {# {% for tag in collections.tagList.sort() | reverse %} #}
+  {% for tag in collections.tagList %}
+    <li class="product-category">
+      <details-utils close-esc force-close="(max-width: 703px)">
+        <details {{ 'open' if expandedProductList else '' }}>
+          <summary class="product-category__title">{{ tag }}</summary>
+          <ul class="product-list grid" role="list">
+            {% for product in collections[ tag ] %}
+            <li class="product-item"
+              {%- if not product.data.sub -%}
+              {{ customStyle | safe }}
+              {% endif %}
+            >
+                {%- if product.data.sub -%}
+                  <details>
+                    <summary class="product-item__title">
+                      {{ product.data.title }}
+                    </summary>
+                    <div>
+                      <ul class="flow" role="list">
+                        {% for item in product.data.sub %}
+                          <li class="product-specification step-0 tertiary">{{ item }}</li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </details>
+                {%- else -%}
+                  {{ product.data.title }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          <!-- <a href="#" style="margin-block: var(--space-m);">
+            {% include "partials/doc.svg" %}
+            <span>
+              <span class="visually-hidden">of {{ product.data.title }}</span>
+              Sales specification
+            </span>
+          </a> -->
+        </details>
+      </details-utils>
+    </li>
+  {% endfor %}
+</ul>
+

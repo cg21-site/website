@@ -1,0 +1,18 @@
+#svg-logo {
+  height: 28px;
+  width: auto;
+}
+
+#svg-logo path:nth-child(-n+8) {
+  fill: var(--header-text);
+}
+/* 
+#svg-logo path:nth-child(n+9) {
+  fill: hsl(175deg 100% 22%);
+} */
+
+@media (forced-colors: active) {
+  #svg-logo path:nth-child(-n+8) {
+    fill: var(--primary);
+  }
+}

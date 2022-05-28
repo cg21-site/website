@@ -1,0 +1,54 @@
+<!-- capture the CSS content as a Nunjucks variable -->
+
+{% set css %}
+  {% include "css/font.css" %}
+  {% include "css/reset.css" %}
+  {% include "css/type.css" %}
+  {% include "css/space.css" %}
+  {% include "css/theme.css" %}
+  {% include "css/utilities.css" %}
+  {% include "css/header.css" %}
+  {% include "css/footer.css" %}
+  {% include "css/section.css" %}
+  {% include "css/button.css" %}
+  {% include "css/logo.css" %}
+  {% include "css/nav.css" %}
+  {% include "css/exceptions.css" %}
+  {% include "css/animations.css" %}
+  {% include "css/cta.css" %}
+
+  {% if layout == "layouts/home.html" %}
+    {% include "css/hero.css" %}
+  {% endif %}
+
+  {% if layout == "layouts/about.html" %}
+    {% include "css/about.css" %}
+  {% endif %}
+  
+  {% if layout == "layouts/home.html" or "layouts/services.html" %}
+    {% include "css/services.css" %}
+    {% include "css/product-list.css" %}
+  {% endif %}
+
+  {% if layout == "layouts/home.html" or "layouts/clients.html" %}
+    {% include "css/clients.css" %}
+    {% include "css/youtube.css" %}
+    {% include "css/testimonial.css" %}
+  {% endif %}
+
+  {% if layout == "layouts/archive.html" %}
+    {% include "css/archive.css" %}
+  {% endif %}
+
+  {% if layout == "layouts/post.html" %}
+    {% include "css/post.css" %}
+  {% endif %}
+  
+  {% if layout == "layouts/contact.html" %}
+    {% include "css/form.css" %}
+    {% include "css/contact.css" %}
+    {% include "css/offices.css" %}
+  {% endif %}
+{% endset %}
+
+<style>{{ css | cssmin | safe }}</style>

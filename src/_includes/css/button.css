@@ -1,0 +1,36 @@
+.btn {
+  padding: var(--space-2xs) var(--space-xs);
+  border: var(--border-size-1) solid var(--accent-color);
+  border-radius: var(--radius-1);
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--surface-1);
+
+  background-color: var(--accent-color);
+  width: fit-content;
+
+  transition: transform 100ms ease-in-out;
+}
+
+.btn:where(:hover, :focus) {
+  color: var(--accent-color);
+  background-color: var(--accent-separator);
+  border-color: var(--accent-bg);
+}
+
+/* .btn:active {
+  transform: scale(0.90);
+} */
+
+.btn[data-variant="secondary"] {
+  padding: var(--space-3xs) var(--space-2xs);
+  border-color: var(--accent-bg);
+  color: var(--accent-color);
+  background-color: var(--surface-2);
+}
+
+.btn[data-variant="secondary"]:where(:hover, :focus) {
+  color: var(--accent-color);
+  background-color: var(--accent-separator);
+}

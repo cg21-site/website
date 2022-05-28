@@ -1,0 +1,25 @@
+{% set logoLimit = 4 %}
+{%- set pickedPosts -%}
+  [true]
+{%- endset -%}
+
+<div class="clients">
+  <article class="wrapper flow">
+    
+    {%- include "partials/clients-header.html" -%}
+    {%- include "partials/clients.html" -%}
+    
+    <article class="flow">
+      <h3 class="section-title">{{ siteContent.clients.subHeading }}</h3>
+      <p>{{ siteContent.clients.subHeadingSubtitle | safe }}</p>
+      <ul class="testimonial-container grid" role="list">
+        {%- for testimonial in collections.testimonials | pluck(pickedPosts, 'featured') | limit(1) -%}
+          {%- include "partials/testimonial-block.html" -%}
+        {%- endfor -%}
+        {%- for testimonial in collections.testimonials | pluck(pickedPosts, 'homepage') | limit(2) -%}
+          {%- include "partials/testimonial-block.html" -%}
+        {%- endfor -%}
+      </ul>
+    </article>
+  </article>
+</div>
