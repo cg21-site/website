@@ -20,7 +20,8 @@
 @media (min-width: 44em) {
   .service-item > :first-child::before {
     /* content: "0" counter(item) "."; */
-    content: "0" counter(item);
+    content: "0" counter(item)/ "";
+    alt: "";
     position: absolute;
     top: 0;
     right: 0;
